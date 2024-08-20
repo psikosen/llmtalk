@@ -14,6 +14,23 @@ These can be applied to most commands:
 - `[FORMAT=format]`: Specifies the output format (e.g., markdown, plain text, LaTeX)
 
 ## 3. Coding Commands
+ ### Advanced usage 
+    CODE_SECURE:Snippet : 
+        [LANGUAGE=Python] 
+        [CODE=
+            def authenticate_user(username, password):
+                query = "SELECT * FROM users WHERE username = '{}' AND password = '{}';".format(username, password)
+                result = db.execute(query)
+                return result
+        ] 
+        [DETAILS=VULNERABILITY_SCAN[
+            ISSUE_1: SQL Injection risk due to unsanitized user input in the SQL query.
+            ISSUE_2: Plaintext password handling without hashing or encryption.
+            RECOMMENDATIONS[
+                FIX_1: Use parameterized queries or ORM methods to prevent SQL injection.
+                FIX_2: Implement password hashing using libraries like bcrypt or Argon2.
+            ]
+        ]]
 
 ### 3.1 Writing Code
 ```
@@ -92,6 +109,22 @@ CODE_API:Integration : [API=api_name] [ENDPOINT=endpoint] [DETAILS=AUTHENTICATIO
 
 ## 4. Writing Commands
 
+### Advanced usage 
+```
+WRITE:Content : 
+    [FORMAT=report] 
+    [TONE=professional] 
+    [LENGTH=2000 words] 
+    [STRUCTURE=
+        Introduction: Overview of the report’s purpose and objectives.
+        Main Body: 
+            Section 1: Detailed analysis of the problem.
+            Section 2: Evaluation of possible solutions.
+            Section 3: Recommendation of the best solution.
+        Conclusion: Summary of key findings and final recommendations.
+    ]
+```
+
 ### 4.1 General Writing
 ```
 WRITE:Content : [FORMAT=essay/report/email/blog post/story] [TONE=tone] [LENGTH=length] [STRUCTURE=structure]
@@ -133,6 +166,31 @@ TRANSLATE:Content : [SOURCE_LANG=language] [TARGET_LANG=language] [STYLE=literal
 ```
 
 ## 5. Mathematical Commands
+### Advanced Usage
+
+```
+MATH_EXPLAIN:Concept : [TOPIC=topic] [DETAILS=Feynman, LaTeX, OPTIONAL=EXAMPLES, SIMPLIFIED]
+```
+
+```
+MATH_EXPLAIN:Concept : [TOPIC=topic] [DETAILS=[METHOD=Feynman], [FORMAT=LaTeX]]
+```
+
+```
+MATH_EXPLAIN:Concept : [TOPIC=topic] [DETAILS=Feynman (default), LaTeX (optional)]
+```
+
+```
+MATH_EXPLAIN:Concept : [TOPIC=topic] [DETAILS=Feynman, LaTeX] [CONTEXT=Part 2 of 5]
+```
+
+```
+MATH_CHAIN:[MATH_EXPLAIN:Concept : [TOPIC=topic] [DETAILS=Feynman], DERIVE:Equation : [TOPIC=related_topic] [DETAILS=LaTeX]]
+```
+
+```
+SOLVE:Equation : [EQUATION=equation] [METHOD=method] [DETAILS=LaTeX] [ERROR_CHECK=On]
+```
 
 ### 5.1 Explaining Mathematical Concepts
 ```
@@ -151,7 +209,7 @@ DERIVE:Equation : [TOPIC=topic] [DETAILS=Feynman, LaTeX]
 
 ### 5.4 Solving Equations
 ```
-SOLVE:Equation : [EQUATION=equation] [METHOD=method] [DETAILS=LaTeX]
+SOLVE:Equation : [EQUATION=equation] [RANGE=-10 to 10] [METHOD=method] [DETAILS=LaTeX]
 ```
 
 ### 5.5 Graphing Functions
@@ -162,6 +220,10 @@ GRAPH:Function : [FUNCTION=function] [RANGE=range] [DETAILS=LaTeX]
 ### 5.6 Calculating Derivatives and Integrals
 ```
 CALCULATE:Derivative/Integral : [FUNCTION=function] [POINT=point] [DETAILS=LaTeX]
+```
+
+```
+example:[FUNCTION=f(x) = 3x^2 + 2x] [POINT=General] [DETAILS=LaTeX: f'(x) = 6x + 2]
 ```
 
 ### 5.7 Simplifying Expressions
@@ -196,6 +258,25 @@ STATS:Analysis : [DATA=dataset] [TEST=statistical_test] [DETAILS=ASSUMPTIONS, IN
 PROBABILITY:Calculate : [EVENT=event] [DISTRIBUTION=distribution] [DETAILS=PARAMETERS, METHOD]
 ```
 
+```
+STATS:Regression : [DATA=dataset] [MODEL=Linear/Logistic] [DETAILS=ASSUMPTIONS, COEFFICIENTS, INTERPRETATION]
+```
+
+```
+STATS:Correlation : [DATA=dataset] [TYPE=Pearson/Spearman] [DETAILS=CORRELATION_COEFFICIENT, INTERPRETATION]
+```
+
+```
+STATS:Analysis : 
+    [DATA=Sample Dataset] 
+    [TEST=ANOVA] 
+    [DETAILS=ASSUMPTIONS: Normal distribution, INTERPRETATION: Significant difference between groups, CONTEXT=Comparative Study on Teaching Methods, VISUAL=YES, ERROR_CHECK=YES]
+```
+
+```
+STATS:HypothesisTest : [DATA=dataset] [TEST=t-test/z-test] [HYPOTHESIS=Null/Alternative] [DETAILS=RESULTS, INTERPRETATION]
+```
+
 ## 6. Specialized Commands
 
 ### 6.1 Medical Summarization
@@ -209,6 +290,27 @@ SCIENCE_SUMMARY:Study Information : [DETAILS=METHODS, RESULTS, CONCLUSION, FORMA
 ```
 
 ### 6.3 Legal Analysis
+
+### Advanced usage
+```
+Example:
+LEGAL_ANALYSIS:Case Information : 
+    [CONTEXT=Background: A dispute between Company A and Company B over the alleged infringement of a software patent. Jurisdiction: U.S. District Court]
+    [DETAILS=
+        KEY_ISSUES[
+            ISSUE_1: Whether the patent held by Company A is valid.
+            ISSUE_2: Whether Company B's software product infringes on Company A's patent.
+        ], 
+        ARGUMENTS[
+            ARGUMENT_1: Company A argues that their patent is valid and covers the software functionality used by Company B.
+            ARGUMENT_2: Company B argues that the patent is invalid due to prior art and that their product does not infringe on the patent.
+        ], 
+        OUTCOMES[
+            OUTCOME_1: The court found the patent valid but did not find Company B's product to infringe on the patent.
+            OUTCOME_2: The court ordered Company A to pay Company B's legal fees due to the dismissal of the infringement claims.
+        ]
+    ]
+```
 
 ```
 LEGAL_ANALYSIS:Case Information : [DETAILS=KEY_ISSUES, ARGUMENTS, OUTCOMES, PRECEDENTS, IMPLICATIONS]
@@ -424,8 +526,7 @@ LONGITUD_DESIGN:Study : [VARIABLES=psych_factors] [TIMEPOINTS=assessment_schedul
 
 ```
 LONGITUD_ANALYZE:Data : [DATASET=longitudinal_data] [METHOD=growth_curve/time_series] [EFFECTS=age,cohort,period]
-```
-
+``` 
 
 ## 7. Advanced and Specialized Commands
 
@@ -670,11 +771,28 @@ SPACE_MISSION:Plan : [DESTINATION=celestial_body] [OBJECTIVES=mission_objectives
 ```
 SPACE_SIMULATE:Environment : [LOCATION=space_environment] [PHYSICS=astrophysics_model] [TIMEFRAME=simulation_duration]
 ```
-
-
+ 
 
 ## 7. Advanced and Specialized Commands
 
+### Advanced Usage
+```
+GAME_NARRATIVE:Develop : 
+    [STRUCTURE=Three-act structure] 
+    [BRANCHING=Branching] 
+    [THEMES=Redemption, Betrayal, Survival]
+```
+
+```
+GAME_NARRATIVE:Develop : [STRUCTURE=narrative_structure] [BRANCHING=linear/branching] [THEMES=theme_list]
+```
+
+```
+GAME_ECONOMY:Balance : 
+    [RESOURCES=Gold, Energy, Food] 
+    [TRANSACTIONS=Trading, Crafting, Upgrading] 
+    [GOALS=Maintain resource equilibrium, Encourage strategic resource management]
+```
 
 ### 7.13 Game Design
 ```
@@ -966,4 +1084,166 @@ SALES_FORECAST:Generate : [PERIOD=forecast_period] [DATA=historical_sales] [FACT
 
 ```
 LOYALTY_PROGRAM:Design : [TIERS=program_tiers] [REWARDS=reward_types] [RULES=earning_redemption_rules]
+```
+
+## 8. Internationalization and Localization
+
+### 8.1 Content Localization
+```
+LOCALIZE:Content : [SOURCE_LANG=source_language] [TARGET_LANG=target_language] [CONTENT_TYPE=text/image/video] [CULTURAL_ADAPTATION=YES/NO]
+```
+
+### 8.2 Resource Management
+```
+I18N_RESOURCE:Manage : [PROJECT=project_name] [RESOURCE_TYPE=strings/images/datetime] [ACTION=extract/update/sync]
+```
+
+### 8.3 Language Detection
+```
+DETECT_LANGUAGE:Analyze : [TEXT=input_text] [CONFIDENCE=minimum_confidence_score]
+```
+
+### 8.4 Translation Memory
+```
+TRANS_MEMORY:Manage : [ACTION=add/query/update] [SOURCE_LANG=source_language] [TARGET_LANG=target_language] [SEGMENT=text_segment]
+```
+
+### 8.5 Locale Testing
+```
+LOCALE_TEST:Perform : [APPLICATION=app_name] [LOCALES=locale_list] [AREAS=UI/content/functionality]
+```
+
+## 9. Accessibility
+
+### 9.1 WCAG Compliance Check
+```
+ACCESSIBILITY_CHECK:Analyze : [CONTENT=webpage/document] [WCAG_LEVEL=A/AA/AAA] [CHECKPOINTS=checkpoint_list]
+```
+
+### 9.2 Screen Reader Optimization
+```
+SCREEN_READER:Optimize : [CONTENT=webpage/document] [ELEMENTS=headings/images/forms] [TESTING_TOOL=tool_name]
+```
+
+### 9.3 Color Contrast Analysis
+```
+COLOR_CONTRAST:Analyze : [FOREGROUND=color_value] [BACKGROUND=color_value] [STANDARD=WCAG2.0/WCAG2.1]
+```
+
+### 9.4 Keyboard Navigation
+```
+KEYBOARD_NAV:Test : [APPLICATION=app_name] [OPERATIONS=operation_list] [REPORT=issue_types]
+```
+
+### 9.5 Accessibility Statement
+```
+ACCESS_STATEMENT:Generate : [WEBSITE=website_url] [COMPLIANCE_LEVEL=compliance_status] [CONTACT=contact_info]
+```
+
+## 10. Version Control and Collaboration
+
+### 10.1 Repository Management
+```
+REPO:Manage : [ACTION=create/clone/fork] [PLATFORM=github/gitlab/bitbucket] [NAME=repo_name]
+```
+
+### 10.2 Branching Strategy
+```
+BRANCH:Create : [NAME=branch_name] [BASE=base_branch] [TYPE=feature/bugfix/release]
+```
+
+### 10.3 Commit Operations
+```
+COMMIT:Perform : [ACTION=create/amend/revert] [MESSAGE=commit_message] [FILES=file_list]
+```
+
+### 10.4 Pull Request
+```
+PR:Manage : [ACTION=create/review/merge] [SOURCE=source_branch] [TARGET=target_branch] [REVIEWERS=reviewer_list]
+```
+
+### 10.5 Merge Conflict Resolution
+```
+MERGE_CONFLICT:Resolve : [FILE=conflicted_file] [STRATEGY=manual/ours/theirs] [TOOL=merge_tool]
+```
+
+## 11. Blockchain and Cryptocurrencies
+
+### 11.1 Smart Contract Development
+```
+SMART_CONTRACT:Develop : [PLATFORM=ethereum/binance/solana] [LANGUAGE=solidity/rust] [FUNCTIONALITY=function_list]
+```
+
+### 11.2 Blockchain Network Analysis
+```
+BLOCKCHAIN_ANALYZE:Network : [CHAIN=chain_name] [METRICS=transaction_volume/active_addresses/gas_fees] [TIMEFRAME=time_period]
+```
+
+### 11.3 Cryptocurrency Wallet Management
+```
+CRYPTO_WALLET:Manage : [ACTION=create/import/backup] [TYPE=hot/cold] [CURRENCIES=currency_list]
+```
+
+### 11.4 Token Creation
+```
+TOKEN_CREATE:Deploy : [STANDARD=ERC20/ERC721] [SUPPLY=token_supply] [FEATURES=feature_list]
+```
+
+### 11.5 DApp Architecture
+```
+DAPP_DESIGN:Architecture : [COMPONENTS=component_list] [STORAGE=IPFS/Filecoin] [CONSENSUS=consensus_mechanism]
+```
+
+## 12. Healthcare Informatics
+
+### 12.1 Electronic Health Record (EHR) Management
+```
+EHR:Manage : [ACTION=create/update/query] [PATIENT_ID=patient_identifier] [DATA=health_data_fields]
+```
+
+### 12.2 Medical Imaging Analysis
+```
+MED_IMAGING:Analyze : [MODALITY=X-ray/MRI/CT] [ANATOMY=body_part] [TASK=detection/segmentation/classification]
+```
+
+### 12.3 Clinical Decision Support
+```
+CLINICAL_DECISION:Support : [CONDITION=medical_condition] [PATIENT_DATA=relevant_health_data] [GUIDELINES=clinical_guidelines]
+```
+
+### 12.4 Health Data Interoperability
+```
+HEALTH_DATA:Exchange : [STANDARD=HL7/FHIR/DICOM] [SOURCE=source_system] [DESTINATION=destination_system] [DATA=data_elements]
+```
+
+### 12.5 Telemedicine Platform
+```
+TELEMEDICINE:Setup : [FEATURES=video_call/e-prescription/scheduling] [INTEGRATION=EHR_system] [COMPLIANCE=HIPAA/GDPR]
+```
+
+## 13. Financial Technology (FinTech)
+
+### 13.1 Algorithmic Trading
+```
+ALGO_TRADE:Develop : [ASSET=asset_type] [STRATEGY=strategy_name] [PARAMETERS=parameter_list] [BACKTEST=historical_data]
+```
+
+### 13.2 Fraud Detection
+```
+FRAUD_DETECT:Analyze : [DATA=transaction_data] [METHOD=ML_algorithm] [RULES=rule_set] [ALERT_THRESHOLD=threshold_value]
+```
+
+### 13.3 Risk Assessment
+```
+RISK_ASSESS:Evaluate : [PORTFOLIO=asset_list] [METHOD=VaR/Monte_Carlo] [FACTORS=risk_factors] [TIMEFRAME=assessment_period]
+```
+
+### 13.4 Regulatory Compliance
+```
+COMPLIANCE_CHECK:Perform : [REGULATION=regulation_name] [SCOPE=business_processes] [DATA=relevant_data] [REPORT=compliance_status]
+```
+
+### 13.5 Peer-to-Peer Lending Platform
+```
+P2P_LENDING:Setup : [FEATURES=credit_scoring/loan_matching/repayment_tracking] [RISK_MODEL=risk_assessment_model] [COMPLIANCE=regulatory_requirements]
 ```
