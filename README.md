@@ -365,3 +365,257 @@ SPACE_MISSION:Plan : [DESTINATION=celestial_body] [OBJECTIVES=mission_objectives
 ```
 SPACE_SIMULATE:Environment : [LOCATION=space_environment] [PHYSICS=astrophysics_model] [TIMEFRAME=simulation_duration]
 ```
+
+[Previous sections remain unchanged]
+
+## 7. Advanced and Specialized Commands
+
+[Previous subsections 7.1 to 7.12 remain unchanged]
+
+### 7.13 Game Design
+```
+GAME_CONCEPT:Create : [GENRE=game_genre] [PLATFORM=platform] [TARGET_AUDIENCE=audience]
+```
+```
+GAME_MECHANIC:Design : [TYPE=mechanic_type] [COMPLEXITY=low/medium/high] [INTEGRATION=integration_points]
+```
+```
+GAME_LEVEL:Design : [THEME=level_theme] [DIFFICULTY=easy/medium/hard] [OBJECTIVES=objective_list]
+```
+```
+GAME_CHARACTER:Create : [ROLE=character_role] [ABILITIES=ability_list] [BACKGROUND=character_backstory]
+```
+```
+GAME_ECONOMY:Balance : [RESOURCES=resource_list] [TRANSACTIONS=transaction_types] [GOALS=economic_goals]
+```
+```
+GAME_NARRATIVE:Develop : [STRUCTURE=narrative_structure] [BRANCHING=linear/branching] [THEMES=theme_list]
+```
+
+### 7.14 Software Documentation
+```
+DOC_API:Generate : [LANGUAGE=programming_language] [STYLE=documentation_style] [INCLUDE=methods,classes,parameters]
+```
+```
+DOC_USER_GUIDE:Create : [SOFTWARE=software_name] [AUDIENCE=novice/intermediate/expert] [SECTIONS=section_list]
+```
+```
+DOC_ARCHITECTURE:Outline : [SYSTEM=system_name] [COMPONENTS=component_list] [RELATIONSHIPS=relationship_types]
+```
+```
+DOC_CHANGELOG:Update : [VERSION=version_number] [CHANGES=change_list] [CATEGORIZE=features,bugfixes,deprecations]
+```
+```
+DOC_TROUBLESHOOT:Create : [ISSUES=common_issues] [SOLUTIONS=solution_steps] [FORMAT=Q&A/flowchart]
+```
+```
+DOC_CODE_REVIEW:Generate : [SCOPE=file/module/project] [FOCUS=performance/security/style] [OUTPUT=comments/report]
+```
+[Previous sections remain unchanged]
+
+### 7.15 Ticketing Systems
+```
+TICKET:Create : [SYSTEM=system_name] [TYPE=story/bug/task/feature] [PRIORITY=low/medium/high] [COMPONENTS=component_list]
+```
+```
+TICKET_DESCRIPTION:Write : [ID=ticket_id] [TEMPLATE=description_template] [DETAILS=steps,expected_behavior,actual_behavior]
+```
+```
+TICKET_WORKFLOW:Update : [ID=ticket_id] [STATUS=new_status] [RESOLUTION=resolution_type]
+```
+```
+TICKET_ESTIMATE:Add : [ID=ticket_id] [METHOD=points/time] [VALUE=estimate_value]
+```
+```
+TICKET_RELATE:Link : [ID=ticket_id] [RELATION=blocks/depends_on/relates_to] [TARGET=related_ticket_id]
+```
+```
+TICKET_COMMENT:Add : [ID=ticket_id] [CONTENT=comment_text] [VISIBILITY=public/internal]
+```
+
+### 7.16 Project Management
+```
+PROJECT:Initialize : [NAME=project_name] [METHODOLOGY=agile/waterfall/hybrid] [OBJECTIVES=objective_list]
+```
+```
+PROJECT_SCOPE:Define : [PROJECT=project_name] [DELIVERABLES=deliverable_list] [CONSTRAINTS=constraint_list]
+```
+```
+PROJECT_SCHEDULE:Create : [PROJECT=project_name] [TASKS=task_list] [DEPENDENCIES=dependency_list] [MILESTONES=milestone_list]
+```
+```
+PROJECT_RESOURCE:Allocate : [PROJECT=project_name] [RESOURCES=resource_list] [ASSIGNMENTS=task_assignments]
+```
+```
+PROJECT_RISK:Assess : [PROJECT=project_name] [RISKS=risk_list] [IMPACT=impact_levels] [MITIGATION=mitigation_strategies]
+```
+```
+PROJECT_BUDGET:Manage : [PROJECT=project_name] [COSTS=cost_items] [TRACKING=actual_vs_planned]
+```
+```
+PROJECT_STAKEHOLDER:Engage : [PROJECT=project_name] [STAKEHOLDERS=stakeholder_list] [COMMUNICATION=communication_plan]
+```
+```
+PROJECT_QUALITY:Control : [PROJECT=project_name] [METRICS=quality_metrics] [STANDARDS=quality_standards] [REVIEWS=review_schedule]
+```
+```
+PROJECT_REPORT:Generate : [PROJECT=project_name] [TYPE=status/performance/forecast] [PERIOD=weekly/monthly/custom]
+```
+```
+PROJECT_CHANGE:Manage : [PROJECT=project_name] [CHANGE=change_description] [IMPACT=scope/schedule/budget] [APPROVAL=approver_list]
+```
+[Previous sections remain unchanged]
+
+### 7.17 Cybersecurity
+```
+SECURITY_AUDIT:Perform : [SYSTEM=system_name] [SCOPE=network/application/data] [STANDARDS=security_standards]
+```
+```
+THREAT_MODEL:Create : [ASSET=asset_name] [THREATS=threat_list] [MITIGATIONS=mitigation_strategies]
+```
+```
+PENTEST:Conduct : [TARGET=target_system] [METHOD=blackbox/whitebox/graybox] [TECHNIQUES=technique_list]
+```
+```
+INCIDENT_RESPONSE:Plan : [SCENARIO=incident_type] [STEPS=response_steps] [TEAM=team_roles]
+```
+
+### 7.18 DevOps and CI/CD
+```
+PIPELINE:Create : [STAGES=stage_list] [TOOLS=tool_list] [TRIGGERS=trigger_events]
+```
+```
+INFRASTRUCTURE:Provision : [PROVIDER=cloud_provider] [RESOURCES=resource_list] [CONFIG=configuration_details]
+```
+```
+MONITORING:Setup : [SYSTEM=system_name] [METRICS=metric_list] [ALERTS=alert_conditions]
+```
+```
+DEPLOYMENT:Automate : [APPLICATION=app_name] [ENVIRONMENT=env_name] [STRATEGY=blue-green/canary/rolling]
+```
+
+### 7.19 Data Governance and Compliance
+```
+DATA_POLICY:Define : [DOMAIN=data_domain] [RULES=policy_rules] [ENFORCEMENT=enforcement_methods]
+```
+```
+COMPLIANCE_CHECK:Perform : [STANDARD=compliance_standard] [SCOPE=system_scope] [EVIDENCE=evidence_list]
+```
+```
+DATA_LINEAGE:Map : [DATASET=dataset_name] [SOURCES=data_sources] [TRANSFORMATIONS=data_transformations]
+```
+```
+PRIVACY_IMPACT:Assess : [PROCESS=business_process] [DATA=data_elements] [RISKS=privacy_risks]
+```
+
+### 7.20 User Experience (UX) and User Interface (UI) Design
+```
+UX_RESEARCH:Conduct : [METHOD=survey/interview/usability_test] [PARTICIPANTS=participant_criteria] [GOALS=research_goals]
+```
+```
+UI_DESIGN:Create : [COMPONENT=ui_component] [STYLE=design_style] [ACCESSIBILITY=accessibility_standards]
+```
+```
+WIREFRAME:Generate : [SCREEN=screen_name] [FIDELITY=low/medium/high] [INTERACTIONS=interaction_list]
+```
+```
+USABILITY_TEST:Plan : [PRODUCT=product_name] [TASKS=task_list] [METRICS=usability_metrics]
+```
+
+### 7.21 Digital Marketing and SEO
+```
+SEO_AUDIT:Perform : [WEBSITE=website_url] [FACTORS=on-page/off-page/technical] [COMPETITORS=competitor_list]
+```
+```
+CONTENT_PLAN:Create : [AUDIENCE=target_audience] [TOPICS=topic_list] [CHANNELS=distribution_channels]
+```
+```
+AD_CAMPAIGN:Design : [PLATFORM=ad_platform] [OBJECTIVE=campaign_objective] [BUDGET=campaign_budget]
+```
+```
+ANALYTICS_REPORT:Generate : [CHANNELS=channel_list] [METRICS=kpi_list] [PERIOD=date_range]
+```
+
+### 7.22 Cloud Computing and Infrastructure as Code
+```
+CLOUD_MIGRATE:Plan : [WORKLOAD=workload_name] [SOURCE=current_environment] [DESTINATION=target_cloud]
+```
+```
+IAC_TEMPLATE:Create : [PLATFORM=terraform/cloudformation/arm] [RESOURCES=resource_list] [VARIABLES=variable_list]
+```
+```
+CLOUD_OPTIMIZE:Analyze : [SERVICES=service_list] [METRICS=performance/cost] [RECOMMENDATIONS=optimization_suggestions]
+```
+```
+MULTI_CLOUD:Manage : [PROVIDERS=cloud_provider_list] [SERVICES=service_map] [GOVERNANCE=policy_set]
+```
+
+### 7.23 Agile and Scrum Methodologies
+```
+SPRINT:Plan : [TEAM=team_name] [CAPACITY=team_capacity] [BACKLOG=prioritized_backlog]
+```
+```
+USER_STORY:Write : [FEATURE=feature_name] [PERSONA=user_persona] [ACCEPTANCE=acceptance_criteria]
+```
+```
+RETROSPECTIVE:Conduct : [SPRINT=sprint_number] [FORMAT=start-stop-continue/mad-sad-glad] [ACTION_ITEMS=improvement_tasks]
+```
+```
+BACKLOG_REFINE:Perform : [PRODUCT=product_name] [ITEMS=backlog_items] [CRITERIA=refinement_criteria]
+```
+
+### 7.24 Business Intelligence and Analytics
+```
+DASHBOARD:Design : [DATA=data_sources] [METRICS=key_metrics] [VISUALIZATIONS=chart_types]
+```
+```
+DATA_MODEL:Create : [SOURCES=data_sources] [RELATIONSHIPS=entity_relationships] [MEASURES=calculated_measures]
+```
+```
+PREDICTIVE_MODEL:Build : [DATA=training_data] [ALGORITHM=model_type] [FEATURES=feature_list]
+```
+```
+KPI:Define : [DEPARTMENT=business_unit] [OBJECTIVES=strategic_goals] [FORMULA=calculation_method]
+```
+
+### 7.25 E-commerce and Online Marketplace Management
+```
+PRODUCT_CATALOG:Manage : [STORE=store_name] [CATEGORIES=category_structure] [ATTRIBUTES=product_attributes]
+```
+```
+PRICING_STRATEGY:Implement : [PRODUCTS=product_list] [METHOD=cost-plus/competitive/dynamic] [RULES=pricing_rules]
+```
+```
+ORDER_WORKFLOW:Configure : [STAGES=order_stages] [AUTOMATION=automated_actions] [NOTIFICATIONS=notification_triggers]
+```
+```
+MARKETPLACE_INTEGRATE:Setup : [PLATFORM=marketplace_name] [PRODUCTS=product_feed] [APIS=integration_points]
+```
+
+### 7.26 Supply Chain and Logistics
+```
+INVENTORY_OPTIMIZE:Analyze : [PRODUCTS=product_list] [DEMAND=demand_forecast] [CONSTRAINTS=storage_constraints]
+```
+```
+ROUTE_PLAN:Generate : [VEHICLES=vehicle_list] [DESTINATIONS=delivery_points] [CONSTRAINTS=time_windows,capacity]
+```
+```
+SUPPLIER_EVALUATE:Perform : [SUPPLIERS=supplier_list] [CRITERIA=evaluation_criteria] [WEIGHTS=criteria_weights]
+```
+```
+WAREHOUSE_LAYOUT:Design : [SPACE=available_space] [PRODUCTS=product_types] [WORKFLOW=picking_strategy]
+```
+
+### 7.27 Customer Relationship Management (CRM)
+```
+LEAD_NURTURE:Design : [SEGMENT=lead_segment] [TOUCHPOINTS=interaction_points] [CONTENT=content_pieces]
+```
+```
+CUSTOMER_SEGMENT:Create : [DATA=customer_data] [ATTRIBUTES=segmentation_criteria] [METHOD=clustering/rule-based]
+```
+```
+SALES_FORECAST:Generate : [PERIOD=forecast_period] [DATA=historical_sales] [FACTORS=influencing_factors]
+```
+```
+LOYALTY_PROGRAM:Design : [TIERS=program_tiers] [REWARDS=reward_types] [RULES=earning_redemption_rules]
+```
