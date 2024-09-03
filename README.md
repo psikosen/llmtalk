@@ -12,6 +12,9 @@ These can be applied to most commands:
 - `[DEPTH=basic/advanced]`: Indicates the level of detail or complexity
 - `[LANGUAGE=language]`: Specifies the output language
 - `[FORMAT=format]`: Specifies the output format (e.g., markdown, plain text, LaTeX)
+- `[MINDSET=Fully Reason]`
+- `[Focus= Do not hallucinate]` - Key Words
+- `[Recall= Re-read the question]` 
 
 ## 3. Coding Commands
  ### Advanced usage 
